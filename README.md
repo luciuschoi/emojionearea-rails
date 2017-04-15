@@ -3,6 +3,7 @@
 Rails gem for EmojiOne Area
 https://github.com/mervick/emojionearea
 
+[![Gem Version](https://badge.fury.io/rb/emojionearea-rails.svg)](https://badge.fury.io/rb/emojionearea-rails)
 
 ## Installation
 
