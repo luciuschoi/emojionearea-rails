@@ -21,6 +21,8 @@ Or install it yourself as:
 
     $ gem install emojionearea-rails
 
+> **Note** : On bundling this gem, `rumoji` and `emoji` gems are also bundled as dependencies.     
+
 ## Usage
 
 ##### 1. `assets/javascripts/application.js` :
@@ -67,6 +69,19 @@ $(document).on 'turbolinks:load', ->
   <%= f.input :content, as: :text, label: false, input_html: { class: 'emojionearea', rows: 5 }  %>
   <%= f.submit class: 'btn btn-outline-primary' %>
 <% end %>
+```
+
+##### 6. `gemojify` helper method
+
+After bundling this gem, you can use `gemojify` helper method out of box. This is for showing all emoji characters graphically in `show` action view template.
+
+```html
+<div class='message'>
+  <div class='user'><%= message.user.user_name %> : </div>
+  <div class='content'>
+    <%=sanitize gemojify( message.content ) %>
+  </div>
+</div>
 ```
 
 That's it.
