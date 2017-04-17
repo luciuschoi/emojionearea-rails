@@ -109,6 +109,8 @@ That's it.
     ```rb
     Rails.application.config.assets.precompile += %w( png_64/* )
     ```
+* v1.1.2 :
+  - update z-index of picker to 100.
 
 ## Development
 
