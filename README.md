@@ -10,7 +10,7 @@ https://github.com/mervick/emojionearea
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'emojionearea-rails', '~> 1.1.1'
+gem 'emojionearea-rails', '~> 1.1.2'
 ```
 
 And then execute:
