@@ -111,6 +111,8 @@ That's it.
     ```
 * v1.1.2 :
   - update z-index of picker to 100.
+* v1.1.3 :
+  - update `gemojify` helper method (removed asset_path)
 
 ## Development
 
