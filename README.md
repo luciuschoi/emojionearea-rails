@@ -86,6 +86,16 @@ After bundling this gem, you can use `gemojify` helper method out of box. This i
 
 That's it.
 
+## Changelog
+
+* v1.0.0 :
+  - `gemojify` helper method add_development_dependency.
+* v1.1.0 :
+  - Updated `gemojify` helper to link built-in images
+  - Added `gemojify_cdn` helper to link cdn images
+  - Added `gemojify_wp` helper to link wp images
+  - Added `emojify_code` helper to show emoji text characters
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
