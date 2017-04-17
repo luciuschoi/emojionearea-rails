@@ -10,7 +10,7 @@ https://github.com/mervick/emojionearea
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'emojionearea-rails'
+gem 'emojionearea-rails', '~> 1.1.1'
 ```
 
 And then execute:
@@ -62,7 +62,15 @@ $(document).on 'turbolinks:load', ->
 @import 'emojionearea.min';
 ```
 
-##### 5. `views/messages/_form.html.erb` :
+##### 5. Add asset image path to precompile path
+
+`config/initializers/asset.rb` :
+
+```rb
+Rails.application.config.assets.precompile += %w( png_64/* )
+```
+
+##### 6. `views/messages/_form.html.erb` :
 
 ```rb
 <%= simple_form_for @message, remote: true do | f | %>
@@ -71,7 +79,7 @@ $(document).on 'turbolinks:load', ->
 <% end %>
 ```
 
-##### 6. `gemojify` helper method
+##### 7. `gemojify` helper method
 
 After bundling this gem, you can use `gemojify` helper method out of box. This is for showing all emoji characters graphically in `show` action view template.
 
@@ -95,6 +103,12 @@ That's it.
   - Added `gemojify_cdn` helper to link cdn images
   - Added `gemojify_wp` helper to link wp images
   - Added `emojify_code` helper to show emoji text characters
+* v1.1.1 :
+  - fixed image link path error.
+  - added instruction to add the following code line in `config/initializers/asset.rb`:
+    ```rb
+    Rails.application.config.assets.precompile += %w( png_64/* )
+    ```
 
 ## Development
 

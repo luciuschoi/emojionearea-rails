@@ -8,7 +8,7 @@ module Emojionearea
         text_symbol = Rumoji.encode(content)
         text_symbol.gsub(/:([\w+-]+):/) do |match|
           if emoji = Emoji.find_by_alias($1)
-            %(<img alt="#{emoji.raw}" src="assets/png_64/#{emoji.image_filename.split("/").last}" style="vertical-align:middle" width="16" height="16" />)
+            image_tag(asset_path("png_64/#{emoji.image_filename.split("/").last}"), size:'16x16', style:"vertical-align:middle")
           else
             match
           end
