@@ -28,7 +28,7 @@ Or install it yourself as:
 ##### 1. `assets/javascripts/application.js` :
 
 ```javascript
-//= require emojionearea
+//= require emojionearea.min
 ```
 
 ##### 2. `assets/javascripts/emojionearea_init.coffee` :
@@ -53,7 +53,7 @@ $(document).on 'turbolinks:load', ->
 
 ```javascript
 //= require emojionearea_init
-//= require emojionearea
+//= require emojionearea.min
 ```
 
 ##### 4. `assets/stylesheets/application.scss` :
