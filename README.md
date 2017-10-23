@@ -70,26 +70,6 @@ $(document).on 'turbolinks:load', ->
 Rails.application.config.assets.precompile += %w( png_64/* )
 ```
 
-`config/application.rb` :
-
-```rb
-config.assets.paths << Gemojione.images_path
-config.assets.precompile << "emoji/*.png"
-```
-
-Install emoji image library assets:
-
-```sh
-$ rake gemojione:install_assets
-====================================================================
-= emoji image assets install
-= Target: /Users/user/src/rails-app/app/assets/images/emoji
-= Source: /Users/user/src/emoji/assets
-====================================================================
-- Creating /Users/user/src/rails-app/app/assets/images/emoji...
-- Installing assets...
-```
-
 ##### 6. `views/messages/_form.html.erb` :
 
 ```rb
@@ -114,7 +94,49 @@ After bundling this gem, you can use `gemojify` helper method out of box. This i
 
 ##### 8. `gemojione_cdn` helper method
 
+
 After bundling this gem, you can also use `gemojione_cdn` helper method out of box. This is to use Gemojione in order to support all emojiones and upgrade to v3.1 cdn  in `show` action view template.
+
+`config/application.rb` :
+
+```rb
+config.assets.paths << Gemojione.images_path
+config.assets.precompile << "emoji/*.png"
+```
+
+Install emoji image library assets:
+
+```sh
+$ rake gemojione:install_assets
+====================================================================
+= emoji image assets install
+= Target: /Users/user/src/rails-app/app/assets/images/emoji
+= Source: /Users/user/src/emoji/assets
+====================================================================
+- Creating /Users/user/src/rails-app/app/assets/images/emoji...
+- Installing assets...
+```
+
+`config/initializers/gemojione.rb` :
+
+```rb
+Gemojione.asset_host = "emoji.cdn.com"
+Gemojione.asset_path = '/assets/emoji'
+Gemojione.default_size = '64px'
+Gemojione.use_svg = true
+Gemojione.use_sprite = true
+```
+
+To customize the emojione size,
+
+```scss
+.emojione{
+  transform: scale(.3);
+  margin: -20px !important;
+}
+```
+
+In view file,
 
 ```html
 <div class='message'>
