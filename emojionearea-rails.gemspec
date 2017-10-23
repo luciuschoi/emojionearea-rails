@@ -29,4 +29,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'rumoji', "~> 0.5.0"
   spec.add_runtime_dependency 'gemoji', "~> 3.0.0"
+  spec.add_runtime_dependency 'gemojione', '~> 3.3.0'
+
 end
