@@ -39,10 +39,7 @@ module Emojionearea
         text_symbol = Rumoji.encode(content) {|emoji| emoji.code } if content.present?
       end
       def gemojione_cdn(content)
-        Gemojione.replace_unicode_moji_with_images(content)
-            .gsub("#{request.protocol}#{request.host}/assets/emoji", "https://cdn.jsdelivr.net/emojione/assets/3.1/png/64")
-            .gsub(/\/(\w+).png/) { |filename| filename.downcase }
-            .html_safe
+        Gemojione.replace_unicode_moji_with_images(content).gsub(/<span.*?emojione-([0123456789abcdef]*).*?>.*?<\/span>/, "<img src='https://cdn.jsdelivr.net/emojione/assets/3.1/png/32/\\1.png' class='emojioneemoji'>").html_safe
       end
     end
   end

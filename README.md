@@ -10,7 +10,7 @@ https://github.com/mervick/emojionearea
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'emojionearea-rails', '~> 1.2.3'
+gem 'emojionearea-rails', '~> 3.4.1'
 ```
 
 And then execute:
@@ -21,7 +21,7 @@ Or install it yourself as:
 
     $ gem install emojionearea-rails
 
-> **Note** : On bundling this gem, `rumoji`, `emoji`, and `gemojione` gems are also bundled as dependencies.     
+> **Note** : On bundling this gem, `rumoji`, `emoji`, and `gemojione` gems are also bundled as dependencies.
 
 ## Usage
 
@@ -46,7 +46,6 @@ $(document).on 'turbolinks:load', ->
         $('#message_content').data('emojioneArea').setText ""
         event.preventDefault()
       return
-
 ```
 
 ##### 3. `assets/javascripts/application.js` :
@@ -59,7 +58,7 @@ $(document).on 'turbolinks:load', ->
 ##### 4. `assets/stylesheets/application.scss` :
 
 ```css
-@import 'emojionearea.min';
+@import "emojionearea.min";
 ```
 
 ##### 5. Add asset image path to precompile path
@@ -94,8 +93,7 @@ After bundling this gem, you can use `gemojify` helper method out of box. This i
 
 ##### 8. `gemojione_cdn` helper method
 
-
-After bundling this gem, you can also use `gemojione_cdn` helper method out of box. This is to use Gemojione in order to support all emojiones and upgrade to v3.1 cdn  in `show` action view template.
+After bundling this gem, you can also use `gemojione_cdn` helper method out of box. This is to use Gemojione in order to support all emojiones and upgrade to v3.1 cdn in `show` action view template.
 
 `config/application.rb` :
 
@@ -130,8 +128,8 @@ Gemojione.use_sprite = true
 To customize the emojione size,
 
 ```scss
-.emojione{
-  transform: scale(.3);
+.emojione {
+  transform: scale(0.3);
   margin: -20px !important;
 }
 ```
@@ -147,31 +145,29 @@ In view file,
 </div>
 ```
 
-
 That's it.
 
 ## Changelog
 
 * v1.0.0 :
-  - `gemojify` helper method add_development_dependency.
+  * `gemojify` helper method add_development_dependency.
 * v1.1.0 :
-  - Updated `gemojify` helper to link built-in images
-  - Added `gemojify_cdn` helper to link cdn images
-  - Added `gemojify_wp` helper to link wp images
-  - Added `emojify_code` helper to show emoji text characters
+  * Updated `gemojify` helper to link built-in images
+  * Added `gemojify_cdn` helper to link cdn images
+  * Added `gemojify_wp` helper to link wp images
+  * Added `emojify_code` helper to show emoji text characters
 * v1.1.1 :
-  - fixed image link path error.
-  - added instruction to add the following code line in `config/initializers/asset.rb`:
+  * fixed image link path error.
+  * added instruction to add the following code line in `config/initializers/asset.rb`:
     ```rb
     Rails.application.config.assets.precompile += %w( png_64/* )
     ```
 * v1.1.2 :
-  - update z-index of picker to 100.
+  * update z-index of picker to 100.
 * v1.1.3 :
-  - update `gemojify` helper method (removed asset_path)
+  * update `gemojify` helper method (removed asset_path)
 * v1.2.3 :
-  - add `gemojione_cdn` helper method issued by Matias Fernandez
-
+  * add `gemojione_cdn` helper method issued by Matias Fernandez
 
 ## Development
 
@@ -181,8 +177,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/emojionearea-rails/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+1.  Fork it ( https://github.com/[my-github-username]/emojionearea-rails/fork )
+2.  Create your feature branch (`git checkout -b my-new-feature`)
+3.  Commit your changes (`git commit -am 'Add some feature'`)
+4.  Push to the branch (`git push origin my-new-feature`)
+5.  Create a new Pull Request

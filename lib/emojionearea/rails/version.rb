@@ -1,5 +1,5 @@
 module Emojionearea
   module Rails
-    VERSION = "1.2.3"
+    VERSION = "3.4.1.0"
   end
 end
